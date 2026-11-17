@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amirhossein Naseh Poshteri — Full Stack Developer</title>
+<meta name="description" content="Portfolio of Amirhossein Naseh Poshteri — Full Stack Developer from Tehran, Iran. C#/.NET Core, Python, ERP development at Parsan.">
+<meta property="og:title" content="Amirhossein Naseh Poshteri — Full Stack Developer">
+<meta property="og:description" content="Full Stack Developer from Tehran — C#/.NET Core & Python. ERP developer at Parsan.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f46e5'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-size='26' font-weight='800' fill='white' text-anchor='middle'%3EAN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --text:#101828; --muted:#5b6478;
+  --accent:#4f46e5; --accent2:#0ea5e9;
+  --grad:linear-gradient(120deg,#4f46e5 0%,#0ea5e9 100%);
+  --line:#e7e9f2; --soft:#eef0f9;
+  --shadow:0 12px 32px rgba(30,41,96,.09);
+  --radius:18px;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+html[dir="rtl"]{ --font-body:'Vazirmatn',Tahoma,'Segoe UI',sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
+body{
+  font-family:var(--font-body); background:var(--bg); color:var(--text);
+  line-height:1.7; font-size:16px; -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1120px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+section{padding-block:clamp(56px,8vw,96px);scroll-margin-top:80px}
+h1,h2,h3{line-height:1.25;font-weight:800}
+a{color:inherit;text-decoration:none}
+.kicker{
+  display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);
+  background:linear-gradient(120deg,rgba(79,70,229,.1),rgba(14,165,233,.1));
+  border:1px solid rgba(79,70,229,.18);padding:6px 14px;border-radius:999px;margin-bottom:14px;
+}
+html[dir="rtl"] .kicker{letter-spacing:0;text-transform:none;font-size:.88rem}
+.sec-title{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:10px}
+.sec-sub{color:var(--muted);max-width:640px;margin-bottom:38px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ── Nav ── */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,247,251,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+.nav-links a{
+  padding:8px 14px;border-radius:10px;font-weight:600;font-size:.95rem;color:var(--muted);
+  transition:all .2s;
+}
+.nav-links a:hover{color:var(--accent);background:var(--soft)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.lang-switch{
+  display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface);
+}
+.lang-switch button{
+  border:0;background:transparent;cursor:pointer;font:inherit;font-weight:700;font-size:.85rem;
+  padding:7px 15px;color:var(--muted);transition:all .2s;
+}
+.lang-switch button.active{background:var(--grad);color:#fff}
+.menu-btn{display:none;border:1px solid var(--line);background:var(--surface);border-radius:10px;
+  width:42px;height:42px;font-size:1.2rem;cursor:pointer;color:var(--text)}
+
+/* ── Hero ── */
+.hero{position:relative;overflow:hidden;padding-block:clamp(56px,9vw,110px)}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none}
+.blob.b1{width:420px;height:420px;background:#c7d2fe;top:-120px;inset-inline-start:-120px}
+.blob.b2{width:380px;height:380px;background:#bae6fd;bottom:-140px;inset-inline-end:-80px}
+.blob.b3{width:260px;height:260px;background:#fbcfe8;top:30%;inset-inline-end:34%}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,56px);align-items:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);
+  border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:var(--muted);
+  box-shadow:var(--shadow);margin-bottom:20px;
+}
+.hero h1{font-size:clamp(2.1rem,5.4vw,3.4rem);letter-spacing:-.02em;margin-bottom:8px}
+.typed-wrap{font-size:clamp(1.15rem,2.6vw,1.55rem);font-weight:700;min-height:2.1em;margin-bottom:16px}
+.typed{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cursor{display:inline-block;width:3px;height:1.1em;background:var(--accent);margin-inline-start:3px;
+  vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero .tagline{color:var(--muted);font-size:1.06rem;max-width:520px;margin-bottom:28px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:14px;
+  font-weight:700;font-size:.97rem;transition:transform .2s,box-shadow .2s;cursor:pointer;border:0;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 24px rgba(79,70,229,.32)}
+.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--line);box-shadow:var(--shadow)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* code card */
+.code-card{
+  direction:ltr;text-align:left;background:#0f172a;border-radius:20px;overflow:hidden;
+  box-shadow:0 24px 60px rgba(15,23,42,.35);animation:float 6s ease-in-out infinite;
+  font-family:'JetBrains Mono',monospace;font-size:.86rem;line-height:1.75;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.code-head{display:flex;align-items:center;gap:8px;padding:13px 18px;background:#1e293b}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.r{background:#f87171}.dot.y{background:#fbbf24}.dot.g{background:#34d399}
+.code-file{margin-inline-start:8px;color:#94a3b8;font-size:.8rem}
+.code-body{padding:20px 22px;color:#e2e8f0;white-space:pre;overflow-x:auto}
+.code-body .kw{color:#c084fc}.code-body .ty{color:#22d3ee}
+.code-body .st{color:#86efac}.code-body .pr{color:#7dd3fc}
+.code-body .pn{color:#94a3b8}.code-body .cm{color:#64748b}
+
+/* stats */
+.stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(44px,6vw,64px)}
+.stat{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 18px;box-shadow:var(--shadow);text-align:center;
+}
+.stat b{display:block;font-size:clamp(1.4rem,2.6vw,1.9rem);letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:.85rem;font-weight:500;display:block;margin-top:4px}
+
+/* ── About ── */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(28px,5vw,56px);align-items:start}
+.about p{color:var(--muted);margin-bottom:16px;font-size:1.03rem}
+.facts{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:26px;
+}
+.facts h3{font-size:1.05rem;margin-bottom:16px}
+.fact{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.fact:last-child{border-bottom:0}
+.fact .fl{color:var(--muted);font-weight:600;flex:none}
+.fact .fv{font-weight:700;text-align:end}
+
+/* ── Skills ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.skill{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;
+}
+.skill:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(30,41,96,.13)}
+.skill .icon{
+  width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;background:linear-gradient(120deg,rgba(79,70,229,.12),rgba(14,165,233,.12));
+  margin-bottom:14px;
+}
+.skill h3{font-size:1.06rem;margin-bottom:8px}
+.skill p{color:var(--muted);font-size:.93rem}
+
+/* ── Experience ── */
+.timeline{position:relative;padding-inline-start:34px}
+.timeline::before{
+  content:"";position:absolute;inset-inline-start:9px;top:6px;bottom:6px;width:3px;
+  background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:99px;
+}
+.titem{position:relative;padding-bottom:10px}
+.titem::before{
+  content:"";position:absolute;inset-inline-start:-33px;top:8px;width:17px;height:17px;border-radius:50%;
+  background:var(--surface);border:4px solid var(--accent);box-shadow:0 0 0 5px rgba(79,70,229,.14);
+}
+.job{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:clamp(22px,3vw,32px);
+}
+.job-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:6px}
+.job-top h3{font-size:1.25rem}
+.badge-current{
+  font-size:.78rem;font-weight:700;color:#047857;background:#d1fae5;border:1px solid #a7f3d0;
+  padding:4px 12px;border-radius:999px;
+}
+.job-meta{color:var(--muted);font-weight:600;font-size:.95rem;margin-bottom:14px}
+.job ul{list-style:none}
+.job li{position:relative;padding-inline-start:22px;color:var(--muted);margin-bottom:9px;font-size:.98rem}
+.job li::before{content:"";position:absolute;inset-inline-start:2px;top:.62em;width:8px;height:8px;border-radius:2px;
+  background:var(--grad);transform:rotate(45deg)}
+.exp-note{
+  margin-top:22px;background:linear-gradient(120deg,rgba(79,70,229,.07),rgba(14,165,233,.07));
+  border:1px dashed rgba(79,70,229,.3);border-radius:var(--radius);padding:18px 22px;
+  color:var(--muted);font-size:.96rem;
+}
+
+/* ── Projects ── */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.proj{
+  display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;
+}
+.proj:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(30,41,96,.13)}
+.proj-top{display:flex;align-items:center;gap:12px}
+.proj .picon{width:44px;height:44px;border-radius:12px;font-size:1.3rem;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(120deg,rgba(79,70,229,.12),rgba(14,165,233,.12))}
+.proj h3{font-size:1.04rem;direction:ltr}
+.proj p{color:var(--muted);font-size:.93rem;flex:1}
+.chip{
+  align-self:flex-start;direction:ltr;font-family:'JetBrains Mono',monospace;font-size:.74rem;font-weight:600;
+  color:var(--accent);background:var(--soft);border:1px solid rgba(79,70,229,.2);padding:4px 11px;border-radius:999px;
+}
+.proj .plink{font-weight:700;font-size:.9rem;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.proj .plink:hover{text-decoration:underline}
+.center{text-align:center;margin-top:34px}
+
+/* ── Education ── */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.edu-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;box-shadow:var(--shadow);
+}
+.edu-card .icon{width:50px;height:50px;border-radius:14px;font-size:1.5rem;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(120deg,rgba(79,70,229,.12),rgba(14,165,233,.12));margin-bottom:14px}
+.edu-card h3{font-size:1.08rem;margin-bottom:8px}
+.edu-card p{color:var(--muted);font-size:.94rem}
+.langbar{margin-top:10px}
+.langrow{display:flex;justify-content:space-between;font-size:.9rem;font-weight:600;margin:10px 0 6px}
+.langrow span:last-child{color:var(--muted);font-weight:500}
+.bar{height:9px;border-radius:99px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:var(--grad)}
+
+/* ── Contact ── */
+.contact-card{
+  position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line);
+  border-radius:24px;box-shadow:var(--shadow);padding:clamp(30px,5vw,56px);text-align:center;
+}
+.contact-card::before{content:"";position:absolute;top:-80px;inset-inline-start:50%;transform:translateX(-50%);
+  width:340px;height:220px;background:radial-gradient(closest-side,rgba(79,70,229,.16),transparent)}
+.contact-card h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-bottom:12px}
+.contact-card p{color:var(--muted);max-width:560px;margin:0 auto 26px}
+.contact-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:28px}
+.ctag{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.9rem;color:var(--muted)}
+.contact-card .btn-row{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* ── Responsive ── */
+@media (max-width:920px){
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .code-card{font-size:.8rem;max-width:100%}
+}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .nav-links{
+    position:fixed;inset-inline:0;top:68px;flex-direction:column;align-items:stretch;gap:4px;
+    background:var(--surface);border-bottom:1px solid var(--line);padding:14px clamp(16px,4vw,32px) 20px;
+    box-shadow:0 20px 40px rgba(30,41,96,.12);display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 14px;font-size:1rem}
+}
+@media (max-width:560px){
+  .btn-row .btn{flex:1;justify-content:center}
+  .code-body{font-size:.72rem;padding:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav container" aria-label="Main">
+    <a href="#top" class="logo grad-text" dir="ltr">AN<span style="color:#0ea5e9">.</span>dev</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#education" data-i18n="nav.education">Education</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button id="btnEn" class="active" onclick="setLang('en')" dir="ltr">EN</button>
+        <button id="btnFa" onclick="setLang('fa')">فا</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+  <div class="blob b3" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-badge">👋 <span data-i18n="hero.badge">Hi, I’m</span></span>
+        <h1 data-i18n="hero.name">Amirhossein Naseh Poshteri</h1>
+        <div class="typed-wrap"><span class="typed" id="typed"></span><span class="cursor" aria-hidden="true"></span></div>
+        <p class="tagline" data-i18n="hero.tagline">I design and build modern web applications with C#/.NET Core and Python — creative software that makes people’s lives easier.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="Amirhossein-NasehPoshteri-Resume.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="hero.btn_cv">Download Resume (PDF)</span>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/zomirex" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <span data-i18n="hero.btn_github">GitHub</span>
+          </a>
+          <a class="btn btn-ghost" href="#contact"><span data-i18n="hero.btn_contact">Contact Me</span></a>
+        </div>
+      </div>
+      <div class="code-card" aria-hidden="true">
+        <div class="code-head">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="code-file">Developer.cs</span>
+        </div>
+        <div class="code-body"><span class="kw">var</span> <span class="pr">developer</span> <span class="pn">=</span> <span class="kw">new</span> <span class="ty">Developer</span><span class="pn">(</span><span class="st">"Amirhossein"</span><span class="pn">)</span>
+<span class="pn">{</span>
+    <span class="pr">Location</span>      <span class="pn">=</span> <span class="st">"Tehran, Iran"</span><span class="pn">,</span>
+    <span class="pr">Role</span>          <span class="pn">=</span> <span class="st">"Full Stack Developer"</span><span class="pn">,</span>
+    <span class="pr">MainStack</span>     <span class="pn">=</span> <span class="pn">[</span><span class="st">"C#"</span><span class="pn">,</span> <span class="st">".NET Core"</span><span class="pn">,</span> <span class="st">"Python"</span><span class="pn">],</span>
+    <span class="pr">Certification</span> <span class="pn">=</span> <span class="st">"CompTIA Network+"</span><span class="pn">,</span>
+    <span class="pr">Passion</span>       <span class="pn">=</span> <span class="st">"Apps that help people"</span><span class="pn">,</span>
+
+    <span class="cm">// always shipping, always learning</span>
+    <span class="kw">while</span> <span class="pn">(</span><span class="pr">alive</span><span class="pn">)</span> <span class="pn">{</span> <span class="pr">code</span><span class="pn">();</span> <span class="pr">learn</span><span class="pn">();</span> <span class="pr">build</span><span class="pn">();</span> <span class="pn">}</span>
+<span class="pn">};</span></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b class="grad-text" data-i18n="s1v">3+</b><span data-i18n="s1l">Years of coding experience</span></div>
+      <div class="stat"><b class="grad-text" data-i18n="s2v">2</b><span data-i18n="s2l">Years of ERP development at Parsan</span></div>
+      <div class="stat"><b class="grad-text" data-i18n="s3v">18</b><span data-i18n="s3l">Repositories on GitHub</span></div>
+      <div class="stat"><b class="grad-text" data-i18n="s4v">Network+</b><span data-i18n="s4l">CompTIA certified</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="reveal">
+      <span class="kicker" data-i18n="about.kicker">Get to know me</span>
+      <h2 class="sec-title" data-i18n="about.title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about reveal">
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+      </div>
+      <div class="facts reveal">
+        <h3>⚡ <span data-i18n="about.kicker2">Quick facts</span></h3>
+        <div class="fact"><span class="fl" data-i18n="f1l">Role</span><span class="fv" data-i18n="f1v">Full Stack Developer</span></div>
+        <div class="fact"><span class="fl" data-i18n="f2l">Location</span><span class="fv" data-i18n="f2v">Tehran, Iran</span></div>
+        <div class="fact"><span class="fl" data-i18n="f3l">Education</span><span class="fv" data-i18n="f3v">B.Sc. in Computer Engineering</span></div>
+        <div class="fact"><span class="fl" data-i18n="f4l">Certification</span><span class="fv" data-i18n="f4v">CompTIA Network+</span></div>
+        <div class="fact"><span class="fl" data-i18n="f5l">Languages</span><span class="fv" data-i18n="f5v">Persian (Native) · English (B2)</span></div>
+        <div class="fact"><span class="fl" data-i18n="f6l">Experience</span><span class="fv" data-i18n="f6v">3 yrs coding · 2 yrs at Parsan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <span class="kicker" data-i18n="skills.kicker">Expertise</span>
+      <h2 class="sec-title" data-i18n="skills.title">Skills &amp; Expertise</h2>
+      <p class="sec-sub" data-i18n="skills.sub">The tools I use to take an idea from sketch to production.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill reveal"><div class="icon">🎯</div><h3 data-i18n="sk1t">C# &amp; .NET Core</h3><p data-i18n="sk1d">My primary stack — backend services, business logic and desktop-grade applications.</p></div>
+      <div class="skill reveal"><div class="icon">🌐</div><h3 data-i18n="sk2t">ASP.NET Core &amp; EF Core</h3><p data-i18n="sk2d">The .NET frameworks I work with daily for web APIs, ORM and data access.</p></div>
+      <div class="skill reveal"><div class="icon">🐍</div><h3 data-i18n="sk3t">Python</h3><p data-i18n="sk3d">Scripting, automation, computer vision and backend tooling.</p></div>
+      <div class="skill reveal"><div class="icon">🎨</div><h3 data-i18n="sk4t">Front-End Basics</h3><p data-i18n="sk4d">HTML, CSS and JavaScript for clean, responsive interfaces.</p></div>
+      <div class="skill reveal"><div class="icon">🗄️</div><h3 data-i18n="sk5t">SQL &amp; Databases</h3><p data-i18n="sk5d">Designing schemas and writing efficient queries for relational databases.</p></div>
+      <div class="skill reveal"><div class="icon">🛡️</div><h3 data-i18n="sk6t">Networking</h3><p data-i18n="sk6d">Solid fundamentals backed by the CompTIA Network+ certification.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <span class="kicker" data-i18n="exp.kicker">Career</span>
+      <h2 class="sec-title" data-i18n="exp.title">Work Experience</h2>
+      <p class="sec-sub" data-i18n="exp.sub">Where I’ve been building things professionally.</p>
+    </div>
+    <div class="timeline">
+      <div class="titem reveal">
+        <div class="job">
+          <div class="job-top">
+            <h3 data-i18n="exp.role">Full Stack Developer</h3>
+            <span class="badge-current" data-i18n="exp.badge">Current</span>
+          </div>
+          <div class="job-meta"><span data-i18n="exp.company">Parsan — ERP Software Development Company · Tehran</span> · <span data-i18n="exp.period">Last 2 years</span></div>
+          <ul>
+            <li data-i18n="exp.b1">Developing and maintaining ERP modules with C# and .NET Core.</li>
+            <li data-i18n="exp.b2">Building and integrating REST APIs between system components.</li>
+            <li data-i18n="exp.b3">Working with the team across the full cycle — analysis, development, testing and support.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="exp-note reveal" data-i18n="exp.note">Alongside my job, I’ve spent 3+ years coding on personal and academic projects — from auction platforms to computer-vision experiments.</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal">
+      <span class="kicker" data-i18n="proj.kicker">Portfolio</span>
+      <h2 class="sec-title" data-i18n="proj.title">Featured Projects</h2>
+      <p class="sec-sub" data-i18n="proj.sub">A selection of things I’ve built — the full list lives on GitHub.</p>
+    </div>
+    <div class="proj-grid" id="projGrid"></div>
+    <div class="center reveal">
+      <a class="btn btn-ghost" href="https://github.com/zomirex?tab=repositories" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        <span data-i18n="proj.more">See more on GitHub</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="reveal">
+      <span class="kicker" data-i18n="edu.kicker">Foundation</span>
+      <h2 class="sec-title" data-i18n="edu.title">Education &amp; Certifications</h2>
+      <p class="sec-sub" data-i18n="edu.sub">The foundation behind the code.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="icon">🎓</div>
+        <h3 data-i18n="edu.d1">B.Sc. in Computer Engineering</h3>
+        <p data-i18n="edu.d1d">Formal education in algorithms, databases, networking and software engineering.</p>
+      </div>
+      <div class="edu-card reveal">
+        <div class="icon">📜</div>
+        <h3 data-i18n="edu.c1">CompTIA Network+</h3>
+        <p data-i18n="edu.c1d">International certification covering networking fundamentals, security and troubleshooting.</p>
+      </div>
+      <div class="edu-card reveal">
+        <div class="icon">🗣️</div>
+        <h3 data-i18n="edu.l1">Languages</h3>
+        <div class="langbar">
+          <div class="langrow"><span data-i18n="lang.fa">Persian</span><span data-i18n="lang.fa_lv">Native</span></div>
+          <div class="bar"><i style="width:100%"></i></div>
+          <div class="langrow"><span data-i18n="lang.en">English</span><span data-i18n="lang.en_lv">B2 · Upper-Intermediate</span></div>
+          <div class="bar"><i style="width:62%"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <span class="kicker" data-i18n="contact.kicker">Contact</span>
+      <h2 data-i18n="contact.title">Let’s Build Something</h2>
+      <p data-i18n="contact.text">I’m open to new opportunities, collaborations and interesting problems. If you’d like to talk, my inbox on GitHub is always open — or just grab my resume.</p>
+      <div class="contact-tags">
+        <span class="ctag" data-i18n="contact.open">Open to opportunities</span>
+        <span class="ctag" data-i18n="contact.loc">📍 Tehran, Iran</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/zomirex" target="_blank" rel="noopener"><span data-i18n="contact.btn_github">Find me on GitHub</span></a>
+        <a class="btn btn-ghost" href="Amirhossein-NasehPoshteri-Resume.pdf" download><span data-i18n="contact.btn_cv">Download Resume (PDF)</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container"><span data-i18n="footer.text">© 2026 Amirhossein Naseh Poshteri · Designed &amp; built with ❤ using vanilla HTML, CSS and JS</span></div>
+</footer>
+
+<script>
+/* ── i18n ── */
+const I18N = {
+en:{
+ 'nav.about':'About','nav.skills':'Skills','nav.experience':'Experience','nav.projects':'Projects','nav.education':'Education','nav.contact':'Contact',
+ 'hero.badge':'Hi, I’m','hero.name':'Amirhossein Naseh Poshteri',
+ 'hero.tagline':'I design and build modern web applications with C#/.NET Core and Python — creative software that makes people’s lives easier.',
+ 'hero.btn_cv':'Download Resume (PDF)','hero.btn_github':'GitHub','hero.btn_contact':'Contact Me',
+ 's1v':'3+','s1l':'Years of coding experience','s2v':'2','s2l':'Years of ERP development at Parsan','s3v':'18','s3l':'Repositories on GitHub','s4v':'Network+','s4l':'CompTIA certified',
+ 'about.kicker':'Get to know me','about.title':'About Me',
+ 'about.p1':'I’m a full stack developer based in Tehran with 3 years of hands-on coding experience and 2 years of professional work at Parsan, an ERP software development company. My main expertise is C# and .NET Core together with the frameworks around them, plus Python for automation and tooling.',
+ 'about.p2':'I’m a passionate and motivated developer who loves building new and creative applications that actually help people in their daily lives. I hold a B.Sc. in Computer Engineering, I’m CompTIA Network+ certified, and I’m always learning something new.',
+ 'about.kicker2':'Quick facts',
+ 'f1l':'Role','f1v':'Full Stack Developer','f2l':'Location','f2v':'Tehran, Iran','f3l':'Education','f3v':'B.Sc. in Computer Engineering','f4l':'Certification','f4v':'CompTIA Network+','f5l':'Languages','f5v':'Persian (Native) · English (B2)','f6l':'Experience','f6v':'3 yrs coding · 2 yrs at Parsan',
+ 'skills.kicker':'Expertise','skills.title':'Skills & Expertise','skills.sub':'The tools I use to take an idea from sketch to production.',
+ 'sk1t':'C# & .NET Core','sk1d':'My primary stack — backend services, business logic and desktop-grade applications.',
+ 'sk2t':'ASP.NET Core & EF Core','sk2d':'The .NET frameworks I work with daily for web APIs, ORM and data access.',
+ 'sk3t':'Python','sk3d':'Scripting, automation, computer vision and backend tooling.',
+ 'sk4t':'Front-End Basics','sk4d':'HTML, CSS and JavaScript for clean, responsive interfaces.',
+ 'sk5t':'SQL & Databases','sk5d':'Designing schemas and writing efficient queries for relational databases.',
+ 'sk6t':'Networking','sk6d':'Solid fundamentals backed by the CompTIA Network+ certification.',
+ 'exp.kicker':'Career','exp.title':'Work Experience','exp.sub':'Where I’ve been building things professionally.',
+ 'exp.badge':'Current','exp.role':'Full Stack Developer','exp.company':'Parsan — ERP Software Development Company · Tehran','exp.period':'Last 2 years',
+ 'exp.b1':'Developing and maintaining ERP modules with C# and .NET Core.',
+ 'exp.b2':'Building and integrating REST APIs between system components.',
+ 'exp.b3':'Working with the team across the full cycle — analysis, development, testing and support.',
+ 'exp.note':'Alongside my job, I’ve spent 3+ years coding on personal and academic projects — from auction platforms to computer-vision experiments.',
+ 'proj.kicker':'Portfolio','proj.title':'Featured Projects','proj.sub':'A selection of things I’ve built — the full list lives on GitHub.','proj.more':'See more on GitHub','proj.link':'View on GitHub',
+ 'edu.kicker':'Foundation','edu.title':'Education & Certifications','edu.sub':'The foundation behind the code.',
+ 'edu.d1':'B.Sc. in Computer Engineering','edu.d1d':'Formal education in algorithms, databases, networking and software engineering.',
+ 'edu.c1':'CompTIA Network+','edu.c1d':'International certification covering networking fundamentals, security and troubleshooting.',
+ 'edu.l1':'Languages','lang.fa':'Persian','lang.fa_lv':'Native','lang.en':'English','lang.en_lv':'B2 · Upper-Intermediate',
+ 'contact.kicker':'Contact','contact.title':'Let’s Build Something',
+ 'contact.text':'I’m open to new opportunities, collaborations and interesting problems. If you’d like to talk, my inbox on GitHub is always open — or just grab my resume.',
+ 'contact.open':'Open to opportunities','contact.loc':'📍 Tehran, Iran',
+ 'contact.btn_github':'Find me on GitHub','contact.btn_cv':'Download Resume (PDF)',
+ 'footer.text':'© 2026 Amirhossein Naseh Poshteri · Designed & built with ❤ using vanilla HTML, CSS and JS',
+ 'doc.title':'Amirhossein Naseh Poshteri — Full Stack Developer'
+},
+fa:{
+ 'nav.about':'درباره من','nav.skills':'مهارت‌ها','nav.experience':'سوابق کاری','nav.projects':'پروژه‌ها','nav.education':'تحصیلات','nav.contact':'تماس با من',
+ 'hero.badge':'سلام، من','hero.name':'امیرحسین ناصح‌پشتری',
+ 'hero.tagline':'من با C#‎/.NET Core و پایتون اپلیکیشن‌های مدرن می‌سازم — نرم‌افزارهای خلاقانه‌ای که زندگی مردم را ساده‌تر می‌کنند.',
+ 'hero.btn_cv':'دانلود رزومه (PDF)','hero.btn_github':'گیت‌هاب','hero.btn_contact':'تماس با من',
+ 's1v':'+۳','s1l':'سال تجربه کدنویسی','s2v':'۲','s2l':'سال توسعه نرم‌افزار ERP در پارسان','s3v':'۱۸','s3l':'ریپوزیتوری در گیت‌هاب','s4v':'Network+','s4l':'دارای مدرک رسمی CompTIA',
+ 'about.kicker':'با من آشنا شوید','about.title':'درباره من',
+ 'about.p1':'من یک توسعه‌دهنده فول‌استک ساکن تهران هستم با ۳ سال تجربه کدنویسی و ۲ سال سابقه کار حرفه‌ای در شرکت پارسان، شرکت توسعه‌دهنده نرم‌افزارهای ERP. تخصص اصلی من C#‎ و ‎.NET Core و فریم‌ورک‌های مرتبط با آن‌هاست، به‌همراه پایتون برای اتوماسیون و ابزارسازی.',
+ 'about.p2':'توسعه‌دهنده‌ای پرشور و مشتاقم که عاشق ساختن برنامه‌های جدید و خلاقانه‌ای است که واقعاً به زندگی مردم کمک می‌کنند. کارشناسی کامپیوتر دارم، مدرک CompTIA Network+‎ دارم و همیشه مشغول یادگیری چیزهای جدیدم.',
+ 'about.kicker2':'آشنایی سریع',
+ 'f1l':'نقش','f1v':'توسعه‌دهنده فول‌استک','f2l':'محل سکونت','f2v':'تهران، ایران','f3l':'تحصیلات','f3v':'کارشناسی کامپیوتر','f4l':'مدرک','f4v':'CompTIA Network+','f5l':'زبان‌ها','f5v':'فارسی (مادری) · انگلیسی (B2)','f6l':'تجربه','f6v':'۳ سال کدنویسی · ۲ سال در پارسان',
+ 'skills.kicker':'تخصص‌ها','skills.title':'مهارت‌ها و تخصص‌ها','skills.sub':'ابزارهایی که برای رساندن یک ایده از طرح تا محصول از آن‌ها استفاده می‌کنم.',
+ 'sk1t':'C#‎ و ‎.NET Core','sk1d':'استک اصلی من — سرویس‌های بک‌اند، منطق بیزینسی و برنامه‌های دسکتاپ.',
+ 'sk2t':'ASP.NET Core و EF Core','sk2d':'فریم‌ورک‌های ‎.NET‎ که روزانه برای وب‌سرویس، ORM و دسترسی به داده با آن‌ها کار می‌کنم.',
+ 'sk3t':'پایتون','sk3d':'اسکریپت‌نویسی، اتوماسیون، بینایی کامپیوتر و ابزارهای بک‌اند.',
+ 'sk4t':'فرانت‌اند','sk4d':'‏HTML، CSS و جاوااسکریپت برای رابط‌های کاربری تمیز و ریسپانسیو.',
+ 'sk5t':'SQL و پایگاه‌داده','sk5d':'طراحی اسکیمما و نوشتن کوئری‌های بهینه در پایگاه‌های داده رابطه‌ای.',
+ 'sk6t':'شبکه','sk6d':'مفاهیم محکم شبکه، پشتیبانی‌شده با مدرک رسمی CompTIA Network+‎.',
+ 'exp.kicker':'مسیر شغلی','exp.title':'سوابق کاری','exp.sub':'جایی که به‌صورت حرفه‌ای ساختم و کد زدم.',
+ 'exp.badge':'شغل فعلی','exp.role':'توسعه‌دهنده فول‌استک','exp.company':'شرکت پارسان — توسعه‌دهنده نرم‌افزار ERP · تهران','exp.period':'۲ سال اخیر',
+ 'exp.b1':'توسعه و نگهداری ماژول‌های ERP با C#‎ و ‎.NET Core‎.',
+ 'exp.b2':'ساخت و یکپارچه‌سازی REST APIها بین اجزای سیستم.',
+ 'exp.b3':'همکاری با تیم در تمام چرخهٔ کار — تحلیل، توسعه، تست و پشتیبانی.',
+ 'exp.note':'در کنار کار، بیش از ۳ سال هم روی پروژه‌های شخصی و دانشگاهی کد زده‌ام — از پلتفرم حراجی تا آزمایش‌های بینایی کامپیوتر.',
+ 'proj.kicker':'نمونه‌کارها','proj.title':'پروژه‌های شاخص','proj.sub':'گزیده‌ای از چیزهایی که ساخته‌ام — لیست کامل در گیت‌هاب است.','proj.more':'بیشتر در گیت‌هاب','proj.link':'مشاهده در گیت‌هاب',
+ 'edu.kicker':'زیربنا','edu.title':'تحصیلات و مدارک','edu.sub':'زیربنایی که پشت کدها قرار دارد.',
+ 'edu.d1':'کارشناسی کامپیوتر','edu.d1d':'تحصیلات رسمی در الگوریتم، پایگاه‌داده، شبکه و مهندسی نرم‌افزار.',
+ 'edu.c1':'CompTIA Network+','edu.c1d':'مدرک بین‌المللی در حوزه مفاهیم شبکه، امنیت و عیب‌یابی.',
+ 'edu.l1':'زبان‌ها','lang.fa':'فارسی','lang.fa_lv':'زبان مادری','lang.en':'انگلیسی','lang.en_lv':'B2 · متوسط رو به بالا',
+ 'contact.kicker':'ارتباط','contact.title':'بیایید چیزی بسازیم',
+ 'contact.text':'برای فرصت‌های شغلی جدید، همکاری‌ها و مسائل جذاب در دسترسم. اگر دوست داشتید صحبت کنیم، پیام‌های گیت‌هاب همیشه باز است — یا رزومه‌ام را دانلود کنید.',
+ 'contact.open':'آمادهٔ فرصت‌های جدید','contact.loc':'📍 تهران، ایران',
+ 'contact.btn_github':'من را در گیت‌هاب ببینید','contact.btn_cv':'دانلود رزومه (PDF)',
+ 'footer.text':'© ۲۰۲۶ امیرحسین ناصح‌پشتری · طراحی و ساخت با ❤ به‌صورت HTML، CSS و JS خالص',
+ 'doc.title':'امیرحسین ناصح‌پشتری — توسعه‌دهنده فول‌استک'
+}};
+
+const ROLES = {
+  en:['Full Stack Developer','C# / .NET Core Developer','Python Developer'],
+  fa:['توسعه‌دهنده فول‌استک','توسعه‌دهنده C#‎ و ‎.NET Core','توسعه‌دهنده پایتون']
+};
+
+const PROJECTS = [
+  {name:'Narutu Signs — Computer Control', repo:'CV_Narutu_Hand_Signs_Cumputer_control', icon:'🥷', tag:'Python · OpenCV',
+   en:'A computer-vision app that recognizes Naruto-style hand signs and turns them into computer commands — built with Python and OpenCV.',
+   fa:'برنامه‌ای با بینایی کامپیوتر که حرکات دست به سبک ناروتو را تشخیص می‌دهد و به فرمان‌های کامپیوتر تبدیل می‌کند — با پایتون و OpenCV.'},
+  {name:'Auction Project', repo:'Auction_Project', icon:'🔨', tag:'C# · .NET',
+   en:'A full auction platform developed in C# — user management, lots and the complete bidding flow.',
+   fa:'پلتفرم کامل حراجی با C# — مدیریت کاربران، کالاها و فرایند کامل مزایده.'},
+  {name:'Crypto Analyzer', repo:'Crypto_analizer_v0.0.1', icon:'📈', tag:'C#',
+   en:'A desktop tool for tracking and analyzing cryptocurrency markets, written in C#.',
+   fa:'ابزار دسکتاپ برای رصد و تحلیل بازار ارزهای دیجیتال، نوشته‌شده با C#.'},
+  {name:'Physics Lab', repo:'physics-Lab', icon:'⚛️', tag:'JavaScript',
+   en:'Interactive JavaScript simulations for physics experiments and learning.',
+   fa:'شبیه‌سازی‌های تعاملی جاوااسکریپتی برای آزمایش‌ها و یادگیری فیزیک.'},
+  {name:'University DB — SQL Project', repo:'Sql_Toturial_UniversityDb', icon:'🎓', tag:'T-SQL',
+   en:'A university database project with T-SQL scripts covering schema design and real queries.',
+   fa:'پروژه پایگاه‌داده دانشگاهی با اسکریپت‌های T-SQL؛ از طراحی اسکیمما تا کوئری‌های واقعی.'},
+  {name:'WooCommerce Product Maker', repo:'wp-woocommerce-productmaker', icon:'🛒', tag:'C# · WooCommerce API',
+   en:'A C# tool that automates creating and managing products on WooCommerce stores.',
+   fa:'ابزاری با C# برای خودکارسازی ساخت و مدیریت محصول در فروشگاه‌های ووکامرس.'}
+];
+
+/* ── language ── */
+let lang = 'en';
+try{ lang = localStorage.getItem('pf-lang') || 'en'; }catch(e){}
+let typeTimer = null, typeIdx = 0, typeChar = 0, deleting = false;
+
+function renderProjects(){
+  const grid = document.getElementById('projGrid');
+  grid.innerHTML = PROJECTS.map(p => `
+    <a class="proj reveal show" href="https://github.com/zomirex/${p.repo}" target="_blank" rel="noopener">
+      <div class="proj-top"><div class="picon">${p.icon}</div><h3>${p.name}</h3></div>
+      <p>${p[lang]}</p>
+      <span class="chip">${p.tag}</span>
+      <span class="plink">${I18N[lang]['proj.link']} ↗</span>
+    </a>`).join('');
+}
+
+function typeLoop(){
+  const el = document.getElementById('typed');
+  const words = ROLES[lang];
+  const word = words[typeIdx % words.length];
+  if(!deleting){
+    typeChar++;
+    el.textContent = word.slice(0, typeChar);
+    if(typeChar >= word.length){ deleting = true; typeTimer = setTimeout(typeLoop, 1800); return; }
+    typeTimer = setTimeout(typeLoop, 65);
+  } else {
+    typeChar--;
+    el.textContent = word.slice(0, typeChar);
+    if(typeChar <= 0){ deleting = false; typeIdx++; typeTimer = setTimeout(typeLoop, 350); return; }
+    typeTimer = setTimeout(typeLoop, 32);
+  }
+}
+
+function setLang(l, save){
+  lang = l;
+  document.documentElement.lang = l;
+  document.documentElement.dir = (l === 'fa') ? 'rtl' : 'ltr';
+  document.title = I18N[l]['doc.title'];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = I18N[l][el.getAttribute('data-i18n')];
+    if(v !== undefined) el.innerHTML = v;
+  });
+  document.getElementById('btnEn').classList.toggle('active', l === 'en');
+  document.getElementById('btnFa').classList.toggle('active', l === 'fa');
+  renderProjects();
+  clearTimeout(typeTimer); typeIdx = 0; typeChar = 0; deleting = false;
+  document.getElementById('typed').textContent = '';
+  typeLoop();
+  if(save !== false){ try{ localStorage.setItem('pf-lang', l); }catch(e){} }
+}
+
+/* ── nav ── */
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.addEventListener('click', e => { if(e.target.tagName === 'A') navLinks.classList.remove('open'); });
+
+/* ── reveal on scroll ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+setLang(lang, false);
+</script>
+</body>
+</html>
